@@ -19,9 +19,9 @@
     <label class="label">
       <span class="label-text">Heating time</span>
       <div class="input-group divide-surface-200-800 divide-x grid-cols-[0.5fr_auto_0.5fr_auto]">
-        <input type="number" bind:value={heatingMinutes}  placeholder="Input..." step="1" min=0 />
+        <input type="number" class="pl-2 py-1" bind:value={heatingMinutes}  placeholder="Input..." step="1" min=0 />
         <div class="input-group-cell">m</div>
-        <input type="number" bind:value={heatingSeconds}  placeholder="Input..." step="10" min=0 />
+        <input type="number" class="pl-2 py-1" bind:value={heatingSeconds}  placeholder="Input..." step="10" min=0 />
         <div class="input-group-cell">s</div>
       </div>
     </label>
