@@ -16,7 +16,7 @@
 </script>
 
 
-<div class="table-wrap w-fit min-w-96 mx-auto md:mx-2 my-2 mb-4 p-1 preset-filled-surface-100-900 rounded-container">
+<div class="table-wrap w-72 md:w-96 md:mx-2 my-2 mb-4 p-1 preset-filled-surface-100-900 rounded-container">
   <table class="table">
     <thead>
       <tr>
