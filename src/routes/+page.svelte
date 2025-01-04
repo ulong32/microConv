@@ -25,11 +25,13 @@
         <div class="input-group-cell">s</div>
       </div>
     </label>
-    <div class="btn-group flex-row">
-      <button class="btn btn-sm preset-filled touch-manipulation" onclick={()=>{heatingMinutes+=1}}>+1m</button>
-      <button class="btn btn-sm preset-filled touch-manipulation" onclick={() => {heatingSeconds+=10}}>+10s</button>
-      <button class="btn btn-sm preset-filled touch-manipulation" onclick={()=>{heatingMinutes = heatingSeconds = 0;}}>reset</button>
-    </div>
+    <nav class="btn-group grid grid-cols-3 preset-outlined-surface-200-800">
+      <button class="btn preset-filled touch-manipulation" onclick={()=>{heatingMinutes+=10}}>+10m</button>
+      <button class="btn preset-filled touch-manipulation" onclick={()=>{heatingMinutes++}}>+1m</button>
+      <button class="btn preset-filled touch-manipulation" onclick={() => {heatingSeconds+=10}}>+10s</button>
+      <hr class="hr border-t-2 col-span-3" />
+      <button class="btn btn-sm preset-outlined-surface-300-700 col-span-3 touch-manipulation" onclick={()=>{heatingMinutes = heatingSeconds = 0;}}>reset</button>
+    </nav>
     <div class="text-center mb-3">at</div>
     <select bind:value={selectedWattage} class="select rounded-container">
       {#each wattages as wattage}
