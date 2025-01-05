@@ -18,8 +18,8 @@
     }
   })
 </script>
-<div class="flex flex-col md:flex-row justify-center place-items-center">
-  <div class="w-fit mx-auto md:mx-2 bg-surface-900 m-2 p-3 rounded-container flex flex-col justify-evenly">
+<div class="flex flex-col md:flex-row justify-center items-stretch md:items-center mx-4 my-6">
+  <div class="md:mx-2 bg-surface-900 p-3 rounded-container flex flex-col justify-evenly">
     <label class="label">
       <span class="label-text">Heating time</span>
       <div class="input-group divide-surface-200-800 divide-x grid-cols-[0.5fr_auto_0.5fr_auto]">
@@ -60,8 +60,8 @@
       </label>
     </div>
   </div>
-  <div class="m-2 md:-rotate-90 opacity-90">
-    <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 56 56">
+  <div class="m-4 md:-rotate-90 opacity-90">
+    <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" class="mx-auto" viewBox="0 0 56 56">
       <path fill="currentColor" d="M27.988 5.863c-1.218 0-2.086.844-2.086 2.063v30.867l.188 5.016l-7.031-7.711l-5.32-5.25c-.376-.375-.938-.563-1.5-.563c-1.15 0-2.016.89-2.016 2.04c0 .562.21 1.054.656 1.523L26.44 49.434c.446.468.985.703 1.547.703c.586 0 1.125-.235 1.57-.703L45.12 33.848c.445-.47.656-.961.656-1.524c0-1.148-.867-2.039-2.039-2.039c-.539 0-1.101.188-1.476.563l-5.344 5.25l-7.008 7.687l.188-4.992V7.926c0-1.219-.89-2.063-2.11-2.063" />
     </svg>
   </div>
