@@ -1,6 +1,10 @@
 <script lang="ts">
   import MicrowaveTimeTable from "./components/MicrowaveTimeTable.svelte";
-  import { wattages } from "$lib";
+  import { wattageStore } from "$lib";
+  let wattages: Set<number> = $state(new Set<number>());
+  wattageStore.subscribe((value) => {
+    wattages = new Set(value);
+  })
   let selectedWattage: number = $state(500);
   let roundingOption: "ceil" | "round" | "floor" = $state("round");
   let heatingMinutes: number = $state(0);
@@ -26,20 +30,22 @@
       </div>
     </label>
     <nav class="btn-group grid grid-cols-3 preset-outlined-surface-200-800">
-      <button class="btn preset-filled touch-manipulation" onclick={()=>{heatingMinutes+=10}}>+10m</button>
-      <button class="btn preset-filled touch-manipulation" onclick={()=>{heatingMinutes++}}>+1m</button>
-      <button class="btn preset-filled touch-manipulation" onclick={() => {heatingSeconds+=10}}>+10s</button>
+      <button class="btn preset-filled" onclick={() => {heatingMinutes+=10}}>+10m</button>
+      <button class="btn preset-filled" onclick={() => {heatingMinutes++}}>+1m</button>
+      <button class="btn preset-filled" onclick={() => {heatingSeconds+=10}}>+10s</button>
       <hr class="hr border-t-2 col-span-3" />
-      <button class="btn btn-sm preset-outlined-surface-300-700 col-span-3 touch-manipulation" onclick={()=>{heatingMinutes = heatingSeconds = 0;}}>reset</button>
+      <button class="btn btn-sm preset-outlined-surface-300-700 col-span-3" onclick={() => {heatingMinutes = heatingSeconds = 0;}}>reset</button>
     </nav>
-    <div class="text-center mb-3">at</div>
-    <select bind:value={selectedWattage} class="select rounded-container">
-      {#each wattages as wattage}
-        <option value={wattage}>{wattage} W</option>
-      {/each}
-    </select>
+    <label class="label">
+      <span class="label-text">Wattage</span>
+      <select bind:value={selectedWattage} class="select rounded-container">
+        {#each wattages as wattage}
+          <option value={wattage}>{wattage} W</option>
+        {/each}
+      </select>
+    </label>
     <div class="m-2">
-      <div class="text-sm">Rounding options</div>
+      <div class="text-sm">Rounding option</div>
       <label class="block">
         <input type="radio" name="rounding-option" value="ceil" bind:group={roundingOption}>
         <span class="ml-2">Ceil</span>
@@ -63,3 +69,9 @@
     <MicrowaveTimeTable {heatingPower} {roundingOption}/>
   </div>
 </div>
+
+<style>
+  button {
+    @apply touch-manipulation;
+  }
+</style>
