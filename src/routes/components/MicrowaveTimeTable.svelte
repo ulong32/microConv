@@ -81,7 +81,7 @@
               arrowBase="!bg-surface-300 dark:!bg-surface-700"
             >
               {#snippet trigger()}
-                <button class="btn preset-tonal-surface">reset</button>
+                <button class="btn preset-tonal-surface">Reset</button>
               {/snippet}
               {#snippet content()}
                 <div class="h3">Confirm</div>
@@ -90,7 +90,7 @@
                 <button class="btn preset-filled-error-500" onclick={() => {
                   wattageStore.set([150, 500, 600, 700, 800, 900, 1000, 1500]);
                   openState = false;
-                }}>reset wattages</button>
+                }}>Reset wattages</button>
               {/snippet}
             </Popover>
           </td>
